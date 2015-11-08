@@ -16,8 +16,8 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
     //set local long to longitude from location
     $scope.fiveoc.local.long = pos.coords.longitude;
     
-    //set local time to timestamp from location
-    $scope.fiveoc.local.time = new Date().toTimeString(pos.coords.timestamp);
+    //set local time to timestamp from new Date object
+    $scope.fiveoc.local.time = new Date().toTimeString();
 
     //set local loc to city from lat/long via google geocode
     $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg")
@@ -74,6 +74,16 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
   _.each(timeZones, function(value, key, list) {
     if ( $scope.fiveoc.local.time.toString().includes(timeZones[key]) ) {
       console.log(key);
+      //current local time + timezone offset = utc time
+      var d = new Date();
+      var localTime = d.getTime();
+      var localOffset = d.getTimezoneOffset() * 60000;
+      var utc = localTime + localOffset;
+     // var offset = forn country offset (bombay=5.5)
+     // var fornCountryName = utc + ( 3600000 * offset )
+     // var nd = new Date(fornCountryName);
+     // console.log( nd.toLocaleTimeString() )
+      console.log(d, localTime, localOffset)
     }
   });
 
