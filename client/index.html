@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="5oc">
+<head>
+  <meta charset="utf-8">
+  <title>5 O'Clock</title>
+  <link rel="stylesheet" href= "/lib/Materialize/bin/materialize.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="./lib/jquery/dist/jquery.min.js"></script>
+  <script src="./lib/Materialize/bin/materialize.js"></script>
+  <script src="./lib/underscore/underscore-min.js"></script>
+  <script src="./home/index.js"></script>
+</head>
+<body>
+<h1>Five O'Clock</h1>
+<div class="container" ng-controller="LocalController">
+It's <span class="local" ng-hide="!fiveoc.local.loc"><span class="local-time">{{ fiveoc.local.time }}</span> in <span class="local-location">{{ fiveoc.local.loc }}</span></span><span class="forn" ng-hide="!fiveoc.forn.time">, but in {{ fiveoc.forn.city }}, it's {{ fiveoc.forn.time }}.</span>
+<hr>
+local: {{fiveoc.local.lat}} || {{fiveoc.local.long}}
+<hr>
+forn: {{fiveoc.forn.lat}} || {{fiveoc.forn.long}}
+
+</div>
+
+</body>
+</html>

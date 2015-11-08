@@ -1,0 +1,26 @@
+{
+  "name": "5oc",
+  "description": "It's 5 o'clock somewhere!",
+  "main": "server.js",
+  "authors": [
+    "Avi Samloff <avi.samloff@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "Materialize": "materialize#~0.97.1",
+    "underscore": "~1.8.3"
+  }
+}
