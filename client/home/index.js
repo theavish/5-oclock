@@ -1,6 +1,6 @@
 var myApp = angular.module('5oc', []);
 
-Array.prototype.random = function () {
+var randomIndex = function () {
   return this[Math.floor((Math.random()*this.length))];
 }
 
@@ -27,7 +27,7 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
     $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg")
     .success(function(response) { 
       console.log(response);
-      $scope.fiveoc.local.loc = response.results[response.results.length - 3].formatted_address;
+      $scope.fiveoc.local.loc = response.results[response.results.length - 2].formatted_address;
     });
 
     //find 5oclock
