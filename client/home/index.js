@@ -5,6 +5,7 @@ var myApp = angular.module('5oc', []);
 myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) {
   navigator.geolocation.getCurrentPosition(function(pos) {
     console.log(pos);
+    var localD = new Date();
     $scope.randomIndex = function (array) {
       return array[Math.floor((Math.random()*array.length))];
     };
@@ -21,7 +22,7 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
     $scope.fiveoc.local.long = pos.coords.longitude;
 
     //set local time to timestamp from new Date object
-    $scope.fiveoc.local.time = new Date().toTimeString();
+    $scope.fiveoc.local.time = localD.getHours() + ':' + (localD.getMinutes().length > 1 ? localD.getMinutes() : '0' + localD.getMinutes());
 
     //set local loc to city from lat/long via google geocode
     $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg")
@@ -94,14 +95,12 @@ function getLocalTimeByOffset(offset) {
   _.each(offPlaces, function(value, key, list) {
     if ( getLocalTimeByOffset(key).includes('PM') ) {
       if ( getLocalTimeByOffset(key).match(/[4-6]:[0-5][0-9]:[0-5][0-9] PM/g) ) {
-        // console.log('there was a match');
-        // console.log(getLocalTimeByOffset(key), $scope.randomIndex(value))
         var places = [];
         var times = [];
         places.push($scope.randomIndex(value));
         times.push(getLocalTimeByOffset(key));
         $scope.fiveoc.forn.loc = $scope.randomIndex(places);
-        $scope.fiveoc.forn.time = $scope.randomIndex(times);
+        $scope.fiveoc.forn.time = $scope.randomIndex(times).match(/[0-9]:[0-9][0-9]:[0-9][0-9] PM/g)[0];
         console.log(places);
         console.log(times);
       }
