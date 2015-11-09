@@ -6,7 +6,7 @@ Currently using:
   - Node.js
   - AngularJS
   - Express
-  - [TimezoneJS](https://github.com/mde/timezone-js)
+  - [Timezone](https://github.com/bigeasy/timezone)
   - jQuery
   - Materialize
   - Underscore
