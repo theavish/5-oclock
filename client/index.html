@@ -13,10 +13,17 @@
   <script src="./home/index.js"></script>
 </head>
 <body>
-<h1>Five O'Clock</h1>
-<div class="container" ng-controller="LocalController">
-<span class="local" ng-hide="!fiveoc.local.loc">It's <span class="local-time">{{ fiveoc.local.time }}</span> in <span class="local-location">{{ fiveoc.local.loc }}</span></span><span class="forn" ng-hide="!fiveoc.forn.time">, but in <span class="forn-location">{{ fiveoc.forn.loc }}</span>, it's <span class="forn-time">{{ fiveoc.forn.time }}</span>.</span>
-</div>
+  <h1>Five O'Clock</h1>
+  <div class="container" ng-controller="LocalController">
+    <video ng-show="!fiveoc.local.loc && !fiveoc.forn.time" autoplay>
+      <source src="./images/wait.webm" type="video/webm">
+    </video>
+
+    <section ng-hide="!fiveoc.local.loc && !fiveoc.forn.time">
+      <span class="local">It's <span class="local-time">{{ fiveoc.local.time }}</span> in <span class="local-location">{{ fiveoc.local.loc }}</span></span><span class="forn">, but in <span class="forn-location">{{ fiveoc.forn.loc }}</span>, it's <span class="forn-time">{{ fiveoc.forn.time }}</span>.</span>
+    </section>
+
+  </div>
 
 </body>
 </html>
