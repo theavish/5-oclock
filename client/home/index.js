@@ -30,7 +30,6 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
       $scope.fiveoc.local.loc = response.results[response.results.length - 2].formatted_address;
     });
 
-
     var offPlaces = {
       '-12': ['Baker Island', 'Howland Island'],
       '-11': ['American Samoa', 'Hawaii', 'Jarvis Island', 'Kingman Reef', 'Midway Atoll', 'Palmyra Atoll', 'Niue'],
