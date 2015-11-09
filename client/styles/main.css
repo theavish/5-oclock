@@ -4,3 +4,10 @@ span.local-time {
 span.local-location {
   font-weight: bold;
 }
+
+span.forn-time {
+  font-weight: bold;
+}
+span.forn-location {
+  font-weight: bold;
+}

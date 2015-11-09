@@ -1,0 +1,15 @@
+{
+  "name": "timezone",
+  "homepage": "https://github.com/bigeasy/timezone",
+  "version": "0.0.47",
+  "_release": "0.0.47",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.47",
+    "commit": "a911157deb71cc69ff631f2cfcfd5b434b0c651f"
+  },
+  "_source": "git://github.com/bigeasy/timezone.git",
+  "_target": "~0.0.47",
+  "_originalSource": "timezone",
+  "_direct": true
+}

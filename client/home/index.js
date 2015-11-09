@@ -1,13 +1,13 @@
 var myApp = angular.module('5oc', []);
 
-var randomIndex = function () {
-  return this[Math.floor((Math.random()*this.length))];
-}
+
 
 myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) {
   navigator.geolocation.getCurrentPosition(function(pos) {
     console.log(pos)
-
+    $scope.randomIndex = function (array) {
+      return array[Math.floor((Math.random()*array.length))];
+    }
     //build fiveoc object
     $scope.fiveoc = {
       local:{},
@@ -132,10 +132,23 @@ function getLocalTimeByOffset(offset) {
     // return time as a string
     return nd.toLocaleString();
   }
+
+
   //finds five oclock in the world
   _.each(offPlaces, function(value, key, list) {
     if ( getLocalTimeByOffset(key).includes('PM') ) {
-      console.log(getLocalTimeByOffset(key), value);
+      if ( getLocalTimeByOffset(key).match(/[4-6]:[0-5][0-9]:[0-5][0-9] PM/g) ) {
+        // console.log('there was a match');
+        // console.log(getLocalTimeByOffset(key), $scope.randomIndex(value))
+        var places = [];
+        var times = [];
+        places.push($scope.randomIndex(value));
+        times.push(getLocalTimeByOffset(key))
+        $scope.fiveoc.forn.loc = $scope.randomIndex(places);
+        $scope.fiveoc.forn.time = $scope.randomIndex(times);
+        console.log(places)
+        console.log(times)
+      }
     }
   });
 
@@ -143,7 +156,6 @@ function getLocalTimeByOffset(offset) {
   _.each(timeZones, function(value, key, list) {
     if ( $scope.fiveoc.local.time.toString().includes(timeZones[key]) ) {
       console.log(key);
-
     }
   });
 
