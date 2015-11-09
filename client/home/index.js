@@ -63,8 +63,6 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
         times.push(getLocalTimeByOffset(key));
         $scope.fiveoc.forn.loc = randomIndex(places);
         $scope.fiveoc.forn.time = randomIndex(times).match(/[0-9]:[0-9][0-9]/g)[0];
-        console.log(places);
-        console.log(times);
       }
     }
   });
@@ -86,7 +84,6 @@ function getLocalTimeByOffset(offset) {
   }
 
   navigator.geolocation.getCurrentPosition(function(pos) {
-    console.log(pos);
     var localD = new Date();
     //set local lat to latitude from location
     $scope.fiveoc.local.lat = pos.coords.latitude;
@@ -95,16 +92,23 @@ function getLocalTimeByOffset(offset) {
     $scope.fiveoc.local.long = pos.coords.longitude;
 
     //set local time to timestamp from new Date object
-    $scope.fiveoc.local.time = (localD.getHours() > 12 ? localD.getHours() - 12 : localD.getHours()) + ':' + (localD.getMinutes().length = 1 ? localD.getMinutes() : '0' + localD.getMinutes());
+    $scope.fiveoc.local.time = (localD.getHours() > 12 ? localD.getHours() - 12 : localD.getHours()) + ':' + ((localD.getMinutes().length = 1) ? ('0' + localD.getMinutes()) : localD.getMinutes());
 
     //set local loc to city from lat/long via google geocode
     $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg")
-        .success(function(response) {
-            $scope.fiveoc.local.loc = response.results[response.results.length - 2].formatted_address;
-        });
+    .success(function(response) {
+      $scope.fiveoc.local.loc = response.results[response.results.length - 2].formatted_address;
+    });
 
     //re-renders the view
     $scope.$apply();
 
   });
 }]);
+
+$(window).ready(function() {
+  $('.forn-location').on('click', function() {
+    window.location.assign('https://www.google.com/maps/place/' + $(this).text() + '/');
+  });
+});
+
