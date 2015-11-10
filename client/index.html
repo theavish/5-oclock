@@ -14,13 +14,13 @@
   <script src="./home/index.js"></script>
 </head>
 <body>
-  <h1>fiveOC</h1>
   <div class="container" ng-controller="LocalController">
+  <h1>fiveOC</h1>
     <video ng-show="!fiveoc.local.loc" autoplay>
       <source src="./images/wait.webm" type="video/webm">
     </video>
 
-    <section ng-show="fiveoc.local.loc">
+    <section class="display" ng-show="fiveoc.local.loc">
       <span class="local">It's <span class="local-time">{{ fiveoc.local.time }}</span> in <span class="local-location">{{ fiveoc.local.loc }}</span></span><span class="forn">, but in <span class="forn-location">{{ fiveoc.forn.loc }}</span>, it's <span class="forn-time">{{ fiveoc.forn.time }}</span>.</span>
       <img class="weird" src="./images/weird.gif">
     </section>

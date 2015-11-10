@@ -11,3 +11,11 @@ span.forn-time {
 span.forn-location {
   font-weight: bold;
 }
+
+div.container {
+  text-align: center;
+}
+
+img.weird {
+  margin-top: 30px;
+}
