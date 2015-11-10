@@ -63,3 +63,14 @@ div.header {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+div.underline {
+  margin-top: -33px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2px;
+  width: 140.7188px;
+  background-color: black;
+  border-radius: 1px;
+}
