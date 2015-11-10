@@ -16,10 +16,7 @@ myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) 
   //finds five oclock in the world
   _.each(offPlaces, function(value, key, list) {
     if ( getLocalTimeByOffset(key).includes('PM') ) {
-
-
-
-      if ( getLocalTimeByOffset(key).match(/[5-6]:[0-5][0-9]:[0-5][0-9] PM/g) ) {
+      if ( getLocalTimeByOffset(key).match(/(6:00:[0-5][0-9]|5:[0-5][0-9]:[0-5][0-9])\s*pm/gi)) {
         var places = [];
         var times = [];
         places.push(randomIndex(value));
