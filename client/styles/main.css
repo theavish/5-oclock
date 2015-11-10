@@ -1,21 +1,51 @@
-span.local-time {
-  font-weight: bold;
-}
-span.local-location {
-  font-weight: bold;
-}
-
-span.forn-time {
-  font-weight: bold;
-}
-span.forn-location {
-  font-weight: bold;
-}
-
 div.container {
   text-align: center;
 }
 
-img.weird {
+img.weird, video.loading {
   margin-top: 30px;
+  border-radius: 5px;
+}
+
+section.display {
+  font-size: 24px;
+}
+
+span.local {
+  font-weight: bold;
+  background-color: darkgrey;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 1px;
+  border-radius: 5px;
+}
+
+span.forn {
+  font-weight: bold;
+  background-color: darkgrey;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 1px;
+  border-radius: 5px;
+}
+
+html {
+  background-color: lightgrey;
+}
+
+section.card-panel-custom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+span.forn-location {
+  cursor: help;
 }

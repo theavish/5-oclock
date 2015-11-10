@@ -16,14 +16,14 @@
 <body>
   <div class="container" ng-controller="LocalController">
   <h1>fiveOC</h1>
-    <video ng-show="!fiveoc.local.loc" autoplay>
+    <video class="loading" ng-show="!fiveoc.local.loc" autoplay>
       <source src="./images/wait.webm" type="video/webm">
     </video>
 
-    <section class="display" ng-show="fiveoc.local.loc">
-      <span class="local">It's <span class="local-time">{{ fiveoc.local.time }}</span> in <span class="local-location">{{ fiveoc.local.loc }}</span></span><span class="forn">, but in <span class="forn-location">{{ fiveoc.forn.loc }}</span>, it's <span class="forn-time">{{ fiveoc.forn.time }}</span>.</span>
-      <img class="weird" src="./images/weird.gif">
+    <section class="display card-panel z-depth-1 card-panel-custom" ng-show="fiveoc.local.loc">
+      It's <span class="local local-time z-depth-1">{{ fiveoc.local.time }}</span> in <span class="local local-location z-depth-1">{{ fiveoc.local.loc }}</span>, but in <span class="forn forn-location z-depth-1 hoverable waves-effect waves-light">{{ fiveoc.forn.loc }}</span>, it's <span class="forn forn-time z-depth-1">{{ fiveoc.forn.time }}</span>.
     </section>
+      <img ng-show="fiveoc.local.loc" class="weird" src="./images/weird.gif">
 
   </div>
 
