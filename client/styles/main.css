@@ -53,9 +53,11 @@ span.forn-location {
 
 span.small {
   font-size: 42px;
+  font-weight: 200;
 }
 span.big {
   font-size: 58px;
+  font-weight: 500;
 }
 div.header {
   margin-top: 20px;
