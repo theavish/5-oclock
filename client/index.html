@@ -2,7 +2,7 @@
 <html lang="en" ng-app="5oc">
 <head>
   <meta charset="utf-8">
-  <title>5 O'Clock</title>
+  <title>fiveOC</title>
   <link rel="stylesheet" href= "./lib/Materialize/bin/materialize.css">
   <link rel="stylesheet" href="./styles/main.css">
   <script src="./lib/angular/angular.min.js"></script>
@@ -10,10 +10,11 @@
   <script src="./lib/Materialize/bin/materialize.js"></script>
   <script src="./lib/underscore/underscore-min.js"></script>
   <script src="./lib/timezone/src/timezone.js"></script>
+  <script src="./home/utils.js"></script>
   <script src="./home/index.js"></script>
 </head>
 <body>
-  <h1>Five O'Clock</h1>
+  <h1>fiveOC</h1>
   <div class="container" ng-controller="LocalController">
     <video ng-show="!fiveoc.local.loc" autoplay>
       <source src="./images/wait.webm" type="video/webm">
