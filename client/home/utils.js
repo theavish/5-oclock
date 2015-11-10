@@ -39,3 +39,14 @@ var offPlaces = {
   '+13': ['Phoenix Islands', 'Tokelau', 'Samoa', 'Tonga'],
   '+14': ['Line Islands']
 };
+
+var randomIndex = function (array) {
+  return array[Math.floor((Math.random()*array.length))];
+};
+
+$(window).ready(function() {
+  $('.forn-location').on('click', function() {
+    window.location.assign('https://www.google.com/maps/place/' + $(this).text() + '/');
+  });
+});
+

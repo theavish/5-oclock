@@ -1,11 +1,5 @@
 var myApp = angular.module('5oc', []);
 
-
-
-var randomIndex = function (array) {
-  return array[Math.floor((Math.random()*array.length))];
-};
-
 myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) {
     //build fiveoc object
     $scope.fiveoc = {
@@ -65,10 +59,3 @@ function getLocalTimeByOffset(offset) {
     $scope.$apply();
   });
 }]);
-
-$(window).ready(function() {
-  $('.forn-location').on('click', function() {
-    window.location.assign('https://www.google.com/maps/place/' + $(this).text() + '/');
-  });
-});
-
