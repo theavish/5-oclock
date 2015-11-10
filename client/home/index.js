@@ -43,6 +43,7 @@ function getLocalTimeByOffset(offset) {
     return nd.toLocaleString();
   }
 
+//grabs user location from browser (must have location allowed)
   navigator.geolocation.getCurrentPosition(function(pos) {
     var localD = new Date();
     //set local lat to latitude from location
@@ -62,7 +63,6 @@ function getLocalTimeByOffset(offset) {
 
     //re-renders the view
     $scope.$apply();
-
   });
 }]);
 
