@@ -19,10 +19,14 @@
     <span class="small">five</span><span class="big">OC</span>
     </div>
     <div class="underline"></div>
-    <video class="loading responsive-video" ng-show="!fiveoc.local.loc" autoplay>
+    <div class="loader" ng-show="!fiveoc.local.loc">
+      <div class="progress" >
+      <div class="indeterminate"></div>
+      </div>
+      <video class="loading responsive-video" autoplay>
       <source src="./images/wait.webm" type="video/webm">
       </video>
-
+</div>
 
       <section class="display card-panel z-depth-1 card-panel-custom flow-text" ng-show="fiveoc.local.loc">
         It's <span class="local local-time z-depth-1">{{ fiveoc.local.time }}</span> in <span class="local local-location z-depth-1">{{ fiveoc.local.loc }}</span>, but in <span class="forn forn-location z-depth-1">{{ fiveoc.forn.loc }}</span>, it's <span class="forn forn-time z-depth-1">{{ fiveoc.forn.time }}</span>.
