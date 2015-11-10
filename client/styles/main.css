@@ -1,5 +1,9 @@
 div.container {
   text-align: center;
+  min-height:100%;
+  position:relative;
+  padding:10px;
+  padding-bottom:50px;   /* Height of the footer */
 }
 
 video.weird, video.loading {
@@ -31,10 +35,6 @@ span.forn {
   padding-right: 3px;
   margin: 1px;
   border-radius: 5px;
-}
-
-html {
-  background-color: lightgrey;
 }
 
 section.card-panel-custom {
@@ -73,4 +73,40 @@ div.underline {
   width: 140.7188px;
   background-color: black;
   border-radius: 1px;
+}
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+  background-color: lightgrey;
+}
+
+div.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:50px;   /* Height of the footer */
+  background: darkgrey;
+  padding-top: 15px;
+  clear: both;
+}
+
+span.credit {
+  /*margin-top: 5px;
+  margin-bottom: 5px;*/
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+span.align-left {
+  float: left;
+}
+span.align-right {
+  float: right;
+}
+span.pay-me {
+  margin-left: 10px;
+  margin-right: 10px;
 }
