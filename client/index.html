@@ -15,17 +15,21 @@
 </head>
 <body>
   <div class="container" ng-controller="LocalController">
-  <h1>fiveOC</h1>
-    <video class="loading" ng-show="!fiveoc.local.loc" autoplay>
+    <div class="header">
+    <span class="small">five</span><span class="big">OC</span>
+    </div>
+    <video class="loading responsive-video" ng-show="!fiveoc.local.loc" autoplay>
       <source src="./images/wait.webm" type="video/webm">
-    </video>
+      </video>
 
-    <section class="display card-panel z-depth-1 card-panel-custom" ng-show="fiveoc.local.loc">
-      It's <span class="local local-time z-depth-1">{{ fiveoc.local.time }}</span> in <span class="local local-location z-depth-1">{{ fiveoc.local.loc }}</span>, but in <span class="forn forn-location z-depth-1 hoverable waves-effect waves-light">{{ fiveoc.forn.loc }}</span>, it's <span class="forn forn-time z-depth-1">{{ fiveoc.forn.time }}</span>.
-    </section>
-      <img ng-show="fiveoc.local.loc" class="weird" src="./images/weird.gif">
 
-  </div>
+      <section class="display card-panel z-depth-1 card-panel-custom flow-text" ng-show="fiveoc.local.loc">
+        It's <span class="local local-time z-depth-1">{{ fiveoc.local.time }}</span> in <span class="local local-location z-depth-1">{{ fiveoc.local.loc }}</span>, but in <span class="forn forn-location z-depth-1">{{ fiveoc.forn.loc }}</span>, it's <span class="forn forn-time z-depth-1">{{ fiveoc.forn.time }}</span>.
+      </section>
+      <video ng-show="fiveoc.local.loc" class="weird responsive-video" ng-show="!fiveoc.local.loc" loop autoplay>
+        <source src="./images/weird.webm" type="video/webm">
+        </video>
+      </div>
 
-</body>
-</html>
+    </body>
+    </html>

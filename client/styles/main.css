@@ -2,7 +2,7 @@ div.container {
   text-align: center;
 }
 
-img.weird, video.loading {
+video.weird, video.loading {
   margin-top: 30px;
   border-radius: 5px;
 }
@@ -48,4 +48,16 @@ section.card-panel-custom {
 
 span.forn-location {
   cursor: help;
+  height: auto;
+}
+
+span.small {
+  font-size: 42px;
+}
+span.big {
+  font-size: 58px;
+}
+div.header {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
