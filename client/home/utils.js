@@ -47,7 +47,7 @@ var loaders = [
 './images/wait-4.webm',
 './images/wait-5.webm',
 './images/wait-6.webm',
-]
+];
 
 var weirdos = [
 './images/weird-1.webm',
