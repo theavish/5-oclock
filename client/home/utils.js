@@ -40,6 +40,27 @@ var offPlaces = {
   '+14': ['Line Islands']
 };
 
+var loaders = [
+'./images/wait-1.webm',
+'./images/wait-2.webm',
+'./images/wait-3.webm',
+'./images/wait-4.webm',
+'./images/wait-5.webm',
+'./images/wait-6.webm',
+]
+
+var weirdos = [
+'./images/weird-1.webm',
+'./images/weird-2.webm',
+'./images/weird-3.webm',
+'./images/weird-4.webm',
+'./images/weird-5.webm',
+'./images/weird-6.webm',
+'./images/weird-7.webm',
+'./images/weird-8.webm',
+'./images/weird-9.webm',
+];
+
 var randomIndex = function (array) {
   return array[Math.floor((Math.random()*array.length))];
 };

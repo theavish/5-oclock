@@ -3,9 +3,15 @@ var myApp = angular.module('5oc', []);
 myApp.controller('LocalController', ['$scope', '$http', function($scope, $http) {
     //build fiveoc object
     $scope.fiveoc = {
-      local:{},
-      forn:{}
+      local: {},
+      forn: {},
+      loading: '',
+      weird: ''
     };
+
+    $scope.fiveoc.loading = randomIndex(loaders);
+    $scope.fiveoc.weird = randomIndex(weirdos);
+
 
   //finds five oclock in the world
   _.each(offPlaces, function(value, key, list) {
@@ -58,4 +64,5 @@ function getLocalTimeByOffset(offset) {
     //re-renders the view
     $scope.$apply();
   });
+
 }]);
