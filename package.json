@@ -1,14 +1,14 @@
 {
-  "name": "5oc",
+  "name": "fiveOC",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"enjoy!\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Avi Samloff // avi.samloff@gmail.com // AviSamloff.com",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.13.3"
   }
