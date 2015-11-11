@@ -1,6 +1,6 @@
 #fiveOC#
 
-###It's five somewhere...###
+###It's five o'clock somewhere...###
 
 ###Currently using:###
   - Node.js
