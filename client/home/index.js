@@ -38,7 +38,7 @@ function getLocalTimeByOffset(offset) {
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     // create new Date object for different city
     // using supplied offset
-    var nd = new Date(utc + (3600000*offset));
+    var nd = new Date(utc + (3600000 * offset));
     // return time as a string
     return nd.toLocaleString();
   }
@@ -56,8 +56,9 @@ function getLocalTimeByOffset(offset) {
     $scope.fiveoc.local.time = (localD.getHours() > 12 ? localD.getHours() - 12 : localD.getHours()) + ':' + (localD.getMinutes() > 9 ? localD.getMinutes() : '0' + localD.getMinutes());
 
     //set local loc to city from lat/long via google geocode
-    $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg")
+    $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $scope.fiveoc.local.lat + "," + $scope.fiveoc.local.long + "&key=AIzaSyACPJuSeVT5MF0u6GAEXgTtLDQutYK6N1U")
     .success(function(response) {
+      console.log(response);
       $scope.fiveoc.local.loc = response.results[response.results.length - 2].formatted_address;
     });
 
